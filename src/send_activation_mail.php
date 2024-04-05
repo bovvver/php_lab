@@ -12,7 +12,7 @@ function send_activation_mail(string $email, string $token) {
     $env = parse_ini_file(".env");
 
     $fromName = "PHP Site Contact";
-    $body = "Hello! We're glad that you've joined our community on PHP Site!\r\nPlease activate your account by clicking the link below:\r\n\r\n" . $env["SITE_URL"] . "/activate.php?token=$token";
+    $body = "Hello! We're glad that you've joined our community on PHP Site!\r\nPlease activate your account by clicking the link below:\r\n\r\n" . $env["SITE_URL"] . "/activate_email.php?token=$token";
 
     $mail = new PHPMailer();
     $mail->IsSMTP();
@@ -38,4 +38,3 @@ function send_activation_mail(string $email, string $token) {
         echo 'Message has been sent.';
     }
 }
-?>

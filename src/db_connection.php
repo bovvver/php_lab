@@ -1,6 +1,4 @@
 <?php
-include_once __DIR__."/redirect_to_main.php";
-
 function connect_to_db(): ?mysqli {
     $env = parse_ini_file(".env");
 
@@ -17,4 +15,3 @@ function connect_to_db(): ?mysqli {
 
     return $connection;
 }
-?>

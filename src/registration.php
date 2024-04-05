@@ -28,6 +28,13 @@
                 </span>
             </div>
             <div class="inputWrapper">
+                <label for="phoneNumber">Phone number</label>
+                <input id="phoneNumber" name="phoneNumber"/>
+                <span class="error">
+                    <?php showError("phone_number"); ?>
+                </span>
+            </div>
+            <div class="inputWrapper">
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password"/>
                 <span class="error">

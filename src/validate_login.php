@@ -14,7 +14,7 @@ function check_credentials(\mysqli $connection, string $email, string $password)
     if ($result->num_rows === 0) return false;
 
     $row = $result->fetch_assoc();
-    $hashed_password = $row['password'];
+    $hashed_password = $row["password"];
 
     return password_verify($password, $hashed_password);
 }
@@ -31,11 +31,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 
     $_SESSION["logged_in"] = true;
-    $_SESSION["logged_user"] = $email;
+    $_SESSION["logged_email"] = $email;
     unset($_SESSION["login_error"]);
 
     $connection -> close();
 
     header("Location: success.php");
 }
-?>
